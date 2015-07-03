@@ -4,6 +4,6 @@ comfortCaninesControllers.controller('navController', ['$scope', '$location',
 			var pathParams = $location.path.split("/");
 			
 			return 	_.some(pathParams, pathToValidate);
-		},
+		};
 	}
 ]);
