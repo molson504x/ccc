@@ -14,21 +14,21 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li ng-class="{'active': isActive('mission')}">
-                    <a href="#">Our Mission</a>
+                    <a href="#/mission">Our Mission</a>
                 </li>
-                <!--<li>
-                    <a href="#">About Us</a>
-                </li>-->
-                <li>
+                <li ng-class="{'active': isActive('about')}">
+                    <a href="#/about">About Us</a>
+                </li>
+                <li ng-class="{'active': isActive('dogs')}">
                     <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         Our Dogs <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <li>
-                            <a href="#">About Our Dogs</a>
+                            <a href="#/dogs">About Our Dogs</a>
                         </li>
                         <li>
-                            <a href="#">Eve</a>
+                            <a href="#/dogs">Eve</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -36,10 +36,10 @@
                         </li>
                     </ul>
             </li>
-            <!--<li>
-                <a href="#">Media</a>
-            </li>-->
-            <li>
+            <li ng-class="{'active': isActive('media')}">
+                <a href="#/media">Media</a>
+            </li>
+            <li ng-class="{'active': isActive('ministry')}">
                 <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     Ministry Opportunities<span class="caret"></span>
                 </a>
@@ -48,15 +48,15 @@
                         <a href="#">Ministry Calendar</a>
                     </li>-->
                     <li>
-                        <a href="#">Forms</a>
+                        <a href="#/ministry/forms">Forms</a>
                     </li>
                     <li>
-                        <a href="#">Ministry Partners</a>
+                        <a href="#/ministry/partners">Ministry Partners</a>
                     </li>
                 </ul>    
             </li>
-            <li>
-                <a href="#">Contact Us</a>
+            <li ng-class="{'active': isActive('contact')}">
+                <a href="#/contact">Contact Us</a>
             </li>
             </ul>
         </div>

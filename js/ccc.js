@@ -8,6 +8,30 @@ comfortCanines.config(['$routeProvider', function($routeProvider) {
 			templateUrl: 'templates/mission.html',
 			controller: 'missionController'
 		})
+		.when('/about', {
+			templateUrl: 'templates/construction.html',
+			controller: 'aboutController'
+		})
+		.when('/dogs', {
+			templateUrl: 'templates/construction.html',
+			controller: 'dogsController'
+		})
+		.when('/dogs/:dogId', {
+			template: 'templates/construction.html',
+			controller: 'dogsController'
+		})
+		.when('/media', {
+			templateUrl: 'templates/construction.html',
+			controller: 'mediaController'
+		})
+		.when('/ministry/forms', {
+			templateUrl: 'templates/construction.html',
+			controller: 'ministryFormsController'
+		})
+		.when('/ministry/partners', {
+			templateUrl: 'templates/construction.html',
+			controller: 'ministryPartnersController'
+		})
 		.otherwise({
 			redirectTo: '/mission'
 		});
