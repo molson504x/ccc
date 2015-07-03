@@ -32,6 +32,10 @@ comfortCanines.config(['$routeProvider', function($routeProvider) {
 			templateUrl: 'templates/construction.html',
 			controller: 'ministryPartnersController'
 		})
+		.when('/contact', {
+			templateUrl: 'templates/construction.html',
+			controller: 'contactController'
+		})
 		.otherwise({
 			redirectTo: '/mission'
 		});
