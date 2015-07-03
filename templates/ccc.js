@@ -1,4 +1,4 @@
-var comfortCanines = angular.module('comfortCanines', ['ngRoute', 'controllersModule']);
+var comfortCanines = angular.module('comfortCanines', ['ngRoute', 'comfortCaninesControllers']);
 var comfortCaninesControllers = angular.module('comfortCaninesControllers', []);
 
 //CONFIG
