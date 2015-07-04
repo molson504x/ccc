@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
   </head>
   
-  <body>
+  <body style="padding-bottom:150px;">
     <div ng-controller="navController" ng-include="'templates/topNav.html'">
           <!-- Nav bar code -->
     </div>
@@ -38,7 +38,7 @@
     <div ng-view>
       <!--Main Content Area -->
     </div>
-    <div ng-include="'templates/bottomNav.html'" style="bottom:0; position:absolute">
+    <div ng-include="'templates/bottomNav.html'">
       <!--Bottom Nav Area -->
     </div>
     <!-- JS loads at the end... -->
