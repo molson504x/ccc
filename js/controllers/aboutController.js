@@ -1,4 +1,4 @@
-comfortCaninesControllers.controller('aboutControler', ['$scope', 
+comfortCaninesControllers.controller('aboutController', ['$scope', 
 	function($scope) {
 		
 	}
