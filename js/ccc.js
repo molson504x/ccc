@@ -25,7 +25,7 @@ comfortCanines.config(['$routeProvider', function($routeProvider) {
 			controller: 'mediaController'
 		})
 		.when('/ministry/forms', {
-			templateUrl: 'templates/construction.html',
+			templateUrl: 'templates/forms/main.html',
 			controller: 'ministryFormsController'
 		})
 		.when('/ministry/partners', {
