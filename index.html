@@ -12,52 +12,78 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    
+    <style>
+      html, body {
+        margin:0;
+        padding:0;
+        height:100%
+      }
+      #container {
+        min-height: 100%;
+        position: relative;
+        height: 100%;
+      }
+      #body {
+        padding-bottom: 100px;  /*height of nav bar */
+      }
+      #footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100px;  /*height of nav bar */
+        
+      }
+    </style>
   </head>
   
-  <body style="padding-bottom:150px;">
-    <div ng-controller="navController" ng-include="'templates/topNav.html'">
-          <!-- Nav bar code -->
-    </div>
-    <div class="page-header text-center">
-      <img src="./assets/images/logo.png" alt="logo" style="height:150px;" />
-      <h1>Comfort Canines for Christ</h1>
-      <h1>
-        <small>It's not about the dogs...</small>
-      </h1>
-    </div>
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="jumbotron">
-          <h2 class="text-center">Under Construction!</h2>
-          <p class="text-center">Our site is under construction, however we wanted to share our mission with you as quick as possible. If you would like
-            to contact us, please reach out to us on our
-            <a href="https://www.facebook.com/groups/317722785018444/">Facebook Page</a>. Be sure to check back soon for more updates and exciting information!</p>
+  <body>
+    <div id="body">
+      <div ng-controller="navController" ng-include="'templates/topNav.html'">
+            <!-- Nav bar code -->
+      </div>
+      <div class="page-header text-center">
+        <img src="./assets/images/logo.png" alt="logo" style="height:150px;" />
+        <h1>Comfort Canines for Christ</h1>
+        <h1>
+          <small>It's not about the dogs...</small>
+        </h1>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="jumbotron">
+            <h2 class="text-center">Under Construction!</h2>
+            <p class="text-center">Our site is under construction, however we wanted to share our mission with you as quick as possible. If you would like
+              to contact us, please reach out to us on our
+              <a href="https://www.facebook.com/groups/317722785018444/">Facebook Page</a>. Be sure to check back soon for more updates and exciting information!</p>
+          </div>
         </div>
       </div>
+      <div ng-view>
+        <!--Main Content Area -->
+      </div>
     </div>
-    <div ng-view>
-      <!--Main Content Area -->
-    </div>
-    <div ng-include="'templates/bottomNav.html'">
+    <div id="footer" ng-include="'templates/bottomNav.html'">
       <!--Bottom Nav Area -->
     </div>
+    
     <!-- JS loads at the end... -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/js/lodash.js"></script>
 	
-	<!-- AngularJS Files -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.js"></script>
-  <script src="https://code.angularjs.org/1.4.1/angular-route.js"></script>
-  <script src="./js/ccc.js"></script>
-  <script src="/js/controllers/aboutController.js"></script>
-  <script src="/js/controllers/contactController.js"></script>
-  <script src="/js/controllers/dogsController.js"></script>
-  <script src="/js/controllers/mediaController.js"></script>
-  <script src="/js/controllers/ministryFormsController.js"></script>
-  <script src="/js/controllers/ministryPartnersController.js"></script>
-  <script src="/js/controllers/missionController.js"></script>
-  <script src="/js/controllers/navController.js"></script>
+  	<!-- AngularJS Files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.js"></script>
+    <script src="https://code.angularjs.org/1.4.1/angular-route.js"></script>
+    <script src="./js/ccc.js"></script>
+    <script src="/js/controllers/aboutController.js"></script>
+    <script src="/js/controllers/contactController.js"></script>
+    <script src="/js/controllers/dogsController.js"></script>
+    <script src="/js/controllers/mediaController.js"></script>
+    <script src="/js/controllers/ministryFormsController.js"></script>
+    <script src="/js/controllers/ministryPartnersController.js"></script>
+    <script src="/js/controllers/missionController.js"></script>
+    <script src="/js/controllers/navController.js"></script>
   </body>
 
 </html>
