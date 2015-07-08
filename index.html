@@ -38,34 +38,30 @@
   </head>
   
   <body>
-    <div id="outerDiv">
-    <div id="body">
-      <div ng-controller="navController" ng-include="'templates/topNav.html'">
-            <!-- Nav bar code -->
-      </div>
-      <div class="page-header text-center">
-        <img src="./assets/images/logo.png" alt="logo" style="height:150px;" />
-        <h1>Comfort Canines for Christ</h1>
-        <h1>
-          <small>It's not about the dogs...</small>
-        </h1>
-      </div>
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <div class="jumbotron">
-            <h2 class="text-center">Under Construction!</h2>
-            <p class="text-center">Our site is under construction, however we wanted to share our mission with you as quick as possible. If you would like
-              to contact us, please reach out to us on our
-              <a href="https://www.facebook.com/groups/317722785018444/">Facebook Page</a>. Be sure to check back soon for more updates and exciting information!</p>
-          </div>
+    <div ng-controller="navController" ng-include="'templates/topNav.html'">
+          <!-- Nav bar code -->
+    </div>
+    <div class="page-header text-center">
+      <img src="./assets/images/logo.png" alt="logo" style="height:150px;" />
+      <h1>Comfort Canines for Christ</h1>
+      <h1>
+        <small>It's not about the dogs...</small>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="jumbotron">
+          <h2 class="text-center">Under Construction!</h2>
+          <p class="text-center">Our site is under construction, however we wanted to share our mission with you as quick as possible. If you would like
+            to contact us, please reach out to us on our
+            <a href="https://www.facebook.com/groups/317722785018444/">Facebook Page</a>. Be sure to check back soon for more updates and exciting information!</p>
         </div>
-      </div>
-      <div ng-view>
-        <!--Main Content Area -->
       </div>
     </div>
-        </div>
-    <div id="footer" ng-include="'templates/bottomNav.html'">
+    <div ng-view>
+      <!--Main Content Area -->
+    </div>
+    <div ng-include="'templates/bottomNav.html'">
       <!--Bottom Nav Area -->
     </div>
     
