@@ -12,32 +12,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    
-    <style>
-      html, body {
-        margin:0;
-        padding:0;
-        height:100%
-      }
-      #outerDiv {
-        min-height: 100%;
-        position: relative;
-        height: 100%;
-      }
-      #body {
-        padding-bottom: 170px;  /*height of nav bar */
-      }
-      #footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 170px;  /*height of nav bar */
-        
-      }
-    </style>
   </head>
   
-  <body>
+  <body style="padding-bottom:170px;>
     <div ng-controller="navController" ng-include="'templates/topNav.html'">
           <!-- Nav bar code -->
     </div>
