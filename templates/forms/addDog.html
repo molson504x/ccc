@@ -110,7 +110,7 @@
 					<p class="lead">Your Dog's Health</p>
 					<div class="form-group">
 						<label>Does your dog have any health issues?</label>
-						<span class="help-block">Please note: Answering yes does not automatically disqualify your dog from participating in this ministry.  We would like this information in order to best utilize your dog by avoiding putting them into an unsafe or uncomfortable environment.</span>
+						<span class="help-block">Answering yes does not automatically disqualify your dog from participating in this ministry.  We would like this information in order to best utilize your dog by avoiding putting them into an unsafe or uncomfortable environment.</span>
 						<div class="radio-inline">
 							<input type="radio" name="healthIssuesRadios" ng-value="true" ng-model="dogInfo.healthIssues.hasHealthIssues" />Yes
 						</div>
@@ -148,6 +148,12 @@
 						</div>
 						<input type="text" placeholder="Other Treatments" ng-model="dogInfo.preventativeMeds.otherExplain"
 							ng-show="(dogInfo.preventativeMeds.other)" />
+					</div>
+					<div class="form-group">
+						<p class="lead">Medical Certificate</p>
+						<span class="help-text">CCC requires that a medical certificate be on file for ALL dogs utilized as a part of this ministry.  This medical certificate ensures us that your dog has had its yearly vet visit and all vaccinations are up to date.  We require this certificate to be filled out and sent to us annually.<br />
+						The medical certificate can be found <a href="#/missions/forms">on our forms page</a> and is available as a PDF.  Please take this to your vet and have them fill it out and sign it.  You can then scan and email it to us for our records.</span>
+						<label>Your dog will not be able to be utilized by our ministry until we have this certificate on file.</label>
 					</div>
 				</div>
 			</div>
