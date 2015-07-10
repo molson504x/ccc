@@ -21,19 +21,47 @@
 						<input type="text" class="form-control" placeholder="Breed" ng-model="dogInfo.breed" />
 					</div>
 					<div class="form-group">
-						<label>Dog's Gender</label>
-						<div class="radio">
-							<label>
-								<input type="radio" name="gendersRadios" value="male" ng-model="dogInfo.gender" />
-								Male
-							</label>
+						<label>Dog's Gender</label><br />
+						<div class="radio-inline">
+							<input type="radio" name="gendersRadios" value="male" ng-model="dogInfo.gender" />Male
 						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="gendersRadios" value="female" ng-model="dogInfo.gender" />
-								Male
-							</label>
+						<div class="radio-inline">
+							<input type="radio" name="gendersRadios" value="female" ng-model="dogInfo.gender" />Female
 						</div>
+					</div>
+					<div class="form-group" ng-show="(dogInfo.gender == 'male')">
+						<label>Has he been neutered?</label>
+						<div class="radio-inline">
+							<input type="radio" name="fixedRadios" ng-value="true" ng-model="dogInfo.hasbeenFixed" />Yes
+						</div>
+						<div class="radio-inline">
+							<input type="radio" name="fixedRadios" ng-value="false" ng-model="dogInfo.hasbeenFixed" />No
+						</div>
+					</div>
+					<div class="form-group" ng-show="(dogInfo.gender == 'female')">
+						<label>Has she been spayed?</label>
+						<div class="radio-inline">
+							<input type="radio" name="fixedRadios" ng-value="true" ng-model="dogInfo.hasbeenFixed" />Yes
+						</div>
+						<div class="radio-inline">
+							<input type="radio" name="fixedRadios" ng-value="false" ng-model="dogInfo.hasbeenFixed" />No
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Age</label>
+						<input type="number" class="form-control" ng-model="dogInfo.age" placeholder="Age" />
+					</div>
+					<div class="form-group">
+						<label>Weight</label>
+						<input type="number" class="form-control" placeholder="Weight" ng-model="dogInfo.weight" />
+					</div>
+					<div class="form-group">
+						<label>Colors</label>
+						<input type="text" class="form-control" placeholder="Colors" ng-model="dogInfo.colors" />
+					</div>
+				</div>
+				<div class="col-md-4 col-lg-3">
+					
 				</div>
 			</div>
 		</form>
