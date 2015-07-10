@@ -28,6 +28,10 @@ comfortCanines.config(['$routeProvider', function($routeProvider) {
 			templateUrl: 'templates/forms/main.html',
 			controller: 'ministryFormsController'
 		})
+		.when('ministry/forms/addDog', {
+			templateUrl: 'templates/forms/addDog.html',
+			controller: 'ministryFormsController'
+		})
 		.when('/ministry/partners', {
 			templateUrl: 'templates/construction.html',
 			controller: 'ministryPartnersController'
