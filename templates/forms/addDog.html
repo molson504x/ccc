@@ -60,6 +60,37 @@
 						<label>Colors</label>
 						<input type="text" class="form-control" placeholder="Colors" ng-model="dogInfo.colors" />
 					</div>
+					<hr />
+					<p>Your Dog's Experiences</p>
+					<div class="form-group">
+						<label>Please describe any training/certifications your dog has recieved</label>
+						<textarea class="form-control" rows="3" ng-model="dogInfo.certifications"></textarea>
+					</div>
+					<div class="form-group">
+						<label>How much experience does your dog have in public settings or crowds?</label>
+						<textarea class="form-control" rows="2" ng-model="dogInfo.experience.publicSettings"></textarea>
+					</div>
+					<div class="form-group">
+						<label>How much experience does your dog have with young children?</label>
+						<textarea class="form-control" rows="2" ng-model="dogInfo.experience.children"></textarea>
+					</div>
+					<div class="form-group">
+						<label>How much experience does your dog have with elderly, frail, handicapped, and special needs people?</label>
+						<textarea class="form-control" rows="2" ng-model="dogInfo.experience.specialNeeds"></textarea>
+					</div>
+					<div class="form-group">
+						<label>Does your dog get along with and act calmly around other dogs when appropriate?</label>
+						<div class="radio-inline">
+							<input type="radio" name="otherDogsRadios" ng-value="true" ng-model="dogInfo.otherDogs.goodWithOtherDogs" />Yes
+						</div>
+						<div class="radio-inline">
+							<input type="radio" name="otherDogsRadios" ng-value="false" ng-model="dogInfo.otherDogs.goodWithOtherDogs" />No
+						</div>
+						<div class="form-group">
+							<label>Please describe</label>
+							<textarea class="form-control" rows="2" ng-model="dogInfo.otherDogs.explain"></textarea>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-4 col-lg-4">
 					<p class="lead">Veteranarian's Information</p>
@@ -90,6 +121,33 @@
 							<label>Please describe your dog's health issues.</label>
 							<textarea class="form-control" rows="3" ng-model="dogInfo.healthIssues.explain"></textarea>
 						</div>
+					</div>
+					<div class="form-group">
+						<label>Is your dog up to date on all vaccinations?</label>
+						<span class="help-block">CCC requires all dogs to be up-to-date on vaccinations, both for the safety and health of the dogs and the safety and health of the people and other dogs that will be interacting with the CCC dogs.  If your dog's vaccinations are not all up to date, please visit your primary veteranarian.</span>
+						<div class="radio-inline">
+							<input type="radio" name="vaccinationsRadios" ng-value="true" ng-model="dogInfo.healthIssues.vaccinationsUpToDate" />Yes
+						</div>
+						<div class="radio-inline">
+							<input type="radio" name="vaccinationsRadios" ng-value="false" ng-model="dogInfo.healthIssues.vaccinationsUpToDate" />No
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Which preventative medications do you administer to your dog?</label>
+						<div class="checkbox-inline">
+							<input type="checkbox" ng-model="dogInfo.preventativeMeds.flea" />Flea Treatment (monthly)
+						</div>
+						<div class="checkbox-inline">
+							<input type="checkbox" ng-model="dogInfo.preventativeMeds.tick" />Tick Treatment (monthly)
+						</div>
+						<div class="checkbox-inline">
+							<input type="checkbox" ng-model="dogInfo.preventativeMeds.heartWorm" />Heart Worm Treatment (monthly)
+						</div>
+						<div class="checkbox-inline">
+							<input type="checkbox" ng-model="dogInfo.preventativeMeds.other" />Other
+						</div>
+						<input type="text" placeholder="Other Treatments" ng-model="dogInfo.preventativeMeds.otherExplain"
+							ng-show="(dogInfo.preventativeMeds.other)" />
 					</div>
 				</div>
 			</div>

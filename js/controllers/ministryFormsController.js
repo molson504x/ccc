@@ -17,7 +17,7 @@ comfortCaninesControllers.controller('ministryFormsController', ['$scope',
 				hasHealthIssues: false,
 				explain: ""
 			},
-			vaccinationsUpToDate: false,
+			vaccinationsUpToDate: null,
 			preventativeMeds: {
 				flea: false,
 				tick: false,
