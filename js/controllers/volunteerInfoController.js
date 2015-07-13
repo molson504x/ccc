@@ -96,7 +96,7 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 			var modalInstance = $modal.open({
 				animation: true,
 				templateUrl: '/templates/forms/missionStatementModal.html',
-				controller: 'missionStatementModalController',
+				controller: 'MissionStatementModalController',
 				size: 'lg',
 			});
 			
