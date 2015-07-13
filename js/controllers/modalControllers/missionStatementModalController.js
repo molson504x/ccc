@@ -1,6 +1,6 @@
 comfortCaninesControllers.controller('MissionStatementModalController', ['$scope', '$modalInstance', 
 	function($scope, $modalInstance) {		
-		$scope.close = function() {
+		$scope.closeModal = function() {
 			$modalInstance.dismiss('cancel');
 		};
 	}

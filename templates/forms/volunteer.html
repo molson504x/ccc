@@ -28,8 +28,8 @@
 						<div class="radio-inline">
 							<input type="radio" name="acceptedChristRadio" ng-value="false" ng-model="volnteerInfo.acceptedChrist.accepted" />No</div>
 						<div class="form-group" ng-show="volunteerInfo.acceptedChrist.accepted != null">
-							<label ng-show="volunteerInfo.acceptedChrist.accepted">Please share your testimony with us.</label>
-							<label ng-hide="volunteerInfo.acceptedChrist.accepted">What made you decide to volunteer with our ministry?</label>
+							<label ng-show="volunteerInfo.acceptedChrist.accepted == true">Please share your testimony with us.</label>
+							<label ng-show="volunteerInfo.acceptedChrist.accepted == false">What made you decide to volunteer with our ministry?</label><br />
 							<textarea rows="3" ng-model="volunteerInfo.acceptedChrist.explain"></textarea>
 						</div>
 					</div>
