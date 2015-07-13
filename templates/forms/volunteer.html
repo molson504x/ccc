@@ -63,5 +63,42 @@
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<p class="lead">Personal Information</p>
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text" ng-model="volunteerInfo.name" placeholder="Name" />
+					</div>
+					<div class="form-group">
+						<label>Home Address</label>
+						<input type="text" class="form-control" ng-model="volunteerInfo.homeAddress.street" placeholder="Street Address" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.homeAddress.city" placeholder="City" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.homeAddress.state" placeholder="State" />
+						<input type="number" class="form-control" ng-model="volunteerInfo.homeAddress.zip" placeholder="Zip Code" />
+					</div>
+					<div class="form-group">
+						<label>Mailing Address</label>
+						<div class="checkbox">
+							<input type="checkbox" ng-model="volunteerInfo.mailingAddress.isSame" />Same as home address
+						</div>
+						<div ng-hide="volunteerInfo.mailingAddress.isSame">
+							<input type="text" class="form-control"  ng-model="volunteerInfo.homeAddress.street" placeholder="Street Address" />
+							<input type="text" class="form-control" ng-model="volunteerInfo.homeAddress.city" placeholder="City" />
+							<input type="text" class="form-control" ng-model="volunteerInfo.homeAddress.state" placeholder="State" />
+							<input type="number" class="form-control" ng-model="volunteerInfo.homeAddress.zip" placeholder="Zip Code" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Gender</label><br />
+						<div class="radio-inline">
+							<input type="radio" id="genderRadio" ng-value="male" ng-model="volunteerInfo.gender" />Male
+						</div>
+						<div class="radio-inline">
+							<input type="radio" id="genderRadio" ng-value="female" ng-model="volunteerInfo.gender" />Female
+						</div>
+					</div>
+				</div>
+			</div>
 		</form>
 	</div>
