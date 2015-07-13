@@ -100,14 +100,7 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 				size: 'lg',
 			});
 			
-			modalInstance.result.then(function() {
-				$scope.apply(function(scope) {
-					scope.volunteerInfo.missionAndVisionStatements.accepted = null;
-				})
-			},
-			function() {
-				$log.info("Modal closed");
-			});
+			$scope.volunteerInfo.missionAndVisionStatements.accepted = null;
 		};
 	}
 ]);
