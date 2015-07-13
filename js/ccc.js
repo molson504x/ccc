@@ -30,11 +30,11 @@ comfortCanines.config(['$routeProvider', function($routeProvider) {
 		})
 		.when('/ministry/forms/volunteer', {
 			templateUrl: 'templates/forms/volunteer.html',
-			controller: 'ministryFormsController'
+			controller: 'volunteerInfoController'
 		})
 		.when('/ministry/forms/addDog', {
 			templateUrl: 'templates/forms/addDog.html',
-			controller: 'ministryFormsController'
+			controller: 'dogInfoController'
 		})
 		.when('/ministry/partners', {
 			templateUrl: 'templates/construction.html',

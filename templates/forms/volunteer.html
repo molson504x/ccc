@@ -16,3 +16,52 @@
 		</div>
 	</div>
 </div>
+<div class="row">
+	<div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 hidden-sm hidden-xs">
+		<form class="form">
+			<div class="row">
+				<div class="col-md-3 col-lg-3">
+					<div class="form-group">
+						<label>Have you accepted Jesus Christ as your Lord and Savior?</label>
+						<div class="radio-inline">
+							<input type="radio" name="acceptedChristRadio" ng-value="true" ng-model="volunteerInfo.acceptedChrist.accepted" />Yes</div>
+						<div class="radio-inline">
+							<input type="radio" name="acceptedChristRadio" ng-value="false" ng-model="volnteerInfo.acceptedChrist.accepted" />No</div>
+						<div class="form-group">
+							<label ng-show="volunteerInfo.acceptedChrist.accepted">Please share your testimony with us.</label>
+							<label ng-hide="volunteerInfo.acceptedChrist.accepted">What made you decide to volunteer with our ministry?</label>
+							<textarea rows="3" ng-model="volunteerInfo.acceptedChrist.explain"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-lg-3">
+					<div class="form-group">
+						<label>Have you read and agree with CCC's doctrinal statement?</label>
+						<div class="radio-inline">
+							<input type="radio" name="doctrinalRadio" ng-value="true" ng-model="volunteerInfo.doctrinalStatement.accepted" />Yes
+						</div>
+						<div class="radio-inline">
+							<input type="radio" name="doctrinalRadio" ng-value="false" ng-model="volunteerInfo.doctrinalStatement.accepted" />No
+						</div>
+						<div class="form-group" ng-show="(volunteerInfo.doctrinalStatement.accepted == false)">
+							<label>What part of our doctrinal statement do you disagree with?</label>
+							<textarea rows="2" ng-model="volunteerInfo.doctrinalStatement.explain"></textarea>
+							<p class="help-text">You may still complete the application, but we may contact you with further questions about your response.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-lg-3">
+					<div class="form-group">
+						<label>Have you read and understand Comfort Canine for Christ's mission and vision statements?</label>
+						<div class="radio-inline">
+							<input type="radio" name="missionStatementRadio" ng-value="true" ng-model="volunteerInfo.missionAndVisionStatements.accepted" />Yes
+						</div>
+						<div class="radio-inline">
+							<input type="radio" name="missionStatementRadio" ng-value="false" ng-model="volunteerInfo.missionAndVisionStatements.accepted" />No
+						</div>
+						<p class="help-text"><a ng-click="showMissionAndVisionStatements()">Please read our mission statement and vision statement before continuing.</a></p>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
