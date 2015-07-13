@@ -53,7 +53,6 @@ comfortCaninesControllers.controller('ministryFormsController', ['$scope', '$mod
 				animation: true,
 				templateUrl: 'templates/forms/dogModal.html',
 				controller: 'DogModalController',
-				backdrop: false,
 				resolve: {
 					items: function() {
 						return dogs;
