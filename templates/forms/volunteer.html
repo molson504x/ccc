@@ -64,7 +64,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" style="margin-top: 40px;">
 				<div class="col-lg-4 col-md-4">
 					<p class="lead text-center">About you</p>
 					<div class="form-group">
@@ -154,7 +154,63 @@
 				</div>
 				<div class="col-md-4 col-lg-4">
 					<p class="lead text-center">Your Church</p>
-					
+					<p class="help-block">If you currently do not have a home church or are not attending a church, please feel free to leave this area blank.  We understand that not everyone is established at a particular church and that circumstances arise in life that prevent us from becoming a member at a church.  If you are interested in seeking out membership at a church, please let us know and we will happily assist you with finding a church home.</p>
+					<div class="form-group">
+						<label>Are you currently a member or regular attendee at a local church?</label> <br />
+						<div class="radio-inline">
+							<input type="radio" id="churchRadio" ng-value="true" ng-model="volunteerInfo.church.isAffiliated" />Yes
+						</div>
+						<div class="radio-inline">
+							<input type="radio" id="churchRadio" ng-value="false" ng-model="volunteerInfo.church.isAffiliated" />No
+						</div>
+					</div>
+					<div class="form-group" ng-show="volunteerInfo.church.isAffiliated == true">
+						<label>Church Name</label>
+						<input type="text" class="form-control" ng-model="volunteerInfo.church.nameOfChurch" placeholder="Church Name" />
+					</div>
+					<div class="form-group" ng-show="volunteerInfo.church.isAffiliated == true">
+						<label>Church Address</label>
+						<input type="text" class="form-control" ng-model="volunteerInfo.church.address.street" placeholder="Street Address" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.church.address.city" placeholder="City" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.church.address.state" placeholder="State" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.church.address.zip" placeholder="Zip" />
+					</div>
+					<div class="form-group" ng-show="volunteerInfo.church.isAffiliated == true">
+						<label>Church Phone Number</label>
+						<input type="tel" class="form-control" ng-model="volunteerInfo.church.address.phoneNumber" placeholder="Phone Number" />
+					</div>
+					<div class="form-group" ng-show="volunteerInfo.church.isAffiliated == true">
+						<label>Person to Contact</label>
+						<input type="text" class="form-control" ng-model="volunteerInfo.church.personToContact" placeholder="Name" />
+					</div>
+					<hr />
+					<p class="lead text-center">Emergency Contact</p>
+					<p class="help-block">While we never anticipate anything bad to happen while out in the field, we like to be prepared.  In case something were to happen while serving with our ministry, we would like to have an emergency contact on file.  If you wish to not have an emergency contact on file with us, we understand.  Opting out of having an emergency contact on file with us will not disqualify you from serving with our ministry.</p>
+					<div class="form-group">
+						<label>Do you wish to list an emergency contact with us?</label><br />
+						<div class="radio-inline">
+							<input type="radio" id="emergencyContactRadio" ng-value="true" ng-model="volunteerInfo.emergencyContact.provided" />Yes
+						</div>
+						<div class="radio-inline">
+							<input type="radio" id="emergencyContactRadio" ng-value="false" ng-model="volunteerInfo.emergencyContact.provided" />No
+						</div>
+					<div class="form-group" ng-show="volunteerInfo.emergencyContact.provided == true">
+						<label>Name</label>
+						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.name" placeholder="Emergency Contact Name" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.relationship" placeholder="Relationship" />
+					</div>
+					<div class="form-group" ng-show="volunteerInfo.emergencyContact.provided == true">
+						<label>Address</label>
+						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.address.street" placeholder="Street Address" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.address.city" placeholder="City" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.address.state" placeholder="State" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.address.zip" placeholder="Zip" />
+					</div>
+					<div class="form-group" ng-show="volunteerInfo.emergencyContact.provided == true">
+						<label>Phone Number</label>
+						<input type="tel" class="form-control" ng-model="volunteerInfo.emergencyContact.phoneNumber.primary" placeholder="Phone Number" />
+						<input type="tel" class="form-control" ng-model="volunteerInfo.emergencyContact.phoneNumber.secondary" placeholder="Other Phone Number" />
+					</div>
 				</div>
 			</div>
 		</form>

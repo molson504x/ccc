@@ -57,6 +57,7 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 				personToContact: ""
 			},
 			emergencyContact: {
+				provided: true,
 				name: "",
 				address: {
 					street: "",
@@ -96,7 +97,7 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 			var modalInstance = $modal.open({
 				animation: true,
 				templateUrl: '/templates/forms/missionStatementModal.html',
-				controller: 'MissionStatementModalController',
+				controller: 'EmptyModalController',
 				size: 'lg',
 			});
 			
