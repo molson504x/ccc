@@ -161,15 +161,18 @@
 					<!--CRIMINAL HISTORY AND BACKGROUND CHECK -->
 					<hr />
 					<p class="lead">Criminal History and Background Information</p>
-					<p class="help-block"><a ng-click="criminalHistoryWhy = !criminalHistoryWhy" ng-init="criminalHistoryWhy = false">Why we need this information</a>
+					<p class="help-block"><a ng-click="criminalHistoryWhy = !criminalHistoryWhy" ng-init="criminalHistoryWhy = true">Why we need this information</a>
 					<div collapse="criminalHistoryWhy">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h3 class="panel-title">Why do we need this information?</h3>
-								<p class="text-right">Close <i class="fa fa-times-circle"></i></p>
+
 							</div>
 							<div class="panel-body">
 								CCC’s ministry entails working with society’s most vulnerable people including children, the elderly, special needs people, hospitalized patients, those confined to nursing homes or hospice care, and individuals coping with personal tragedies or natural disasters.  Thus, CCC conducts background checks to appropriately screen applicants wishing to represent our organization.  Background checks include criminal history, sex-offender registries, and, if participating in fiduciary duties on CCC’s behalf, a credit report review.  The identities of reporting agencies will be disclosed to CCC applicants, and all information received from reporting agencies will be available for inspection by the applicant.  Conviction(s) for a criminal offense(s) may not necessarily preclude an individual from serving God with CCC.  The nature of the offense(s), the time elapsed since the occurrence of the offense(s), the relevance of the offense(s) to CCC’s mission, as well as other factors of relevance will be taken in consideration.  
+							</div>
+							<div class="panel-footer">
+								<p class="text-right" ng-click="criminalHistoryWhy = true">Close <i class="fa fa-times-circle"></i></p>
 							</div>
 						</div>
 					</div>
