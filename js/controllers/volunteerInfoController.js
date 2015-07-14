@@ -76,7 +76,7 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 				explain: ""
 			},
 			backgroundCheck: {
-				consentToPay: null,
+				consent: null,
 				explain: ""
 			},
 			anyOtherInfo: "",
