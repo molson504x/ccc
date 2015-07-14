@@ -88,7 +88,10 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 				handling: null,
 				care: null,
 				foster: null,
-				other: ""
+				other: {
+					other: false,
+					explain: ""	
+				}
 			},
 			hasADog: null
 		}
