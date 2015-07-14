@@ -47,7 +47,7 @@
 						<div class="form-group" ng-show="(volunteerInfo.doctrinalStatement.accepted == false)">
 							<label>What part of our doctrinal statement do you disagree with?</label>
 							<textarea rows="2" ng-model="volunteerInfo.doctrinalStatement.explain"></textarea>
-							<p class="help-text">You may still complete the application, but we may contact you with further questions about your response.</p>
+							<p class="help-block">You may still complete the application, but we may contact you with further questions about your response.</p>
 						</div>
 					</div>
 				</div>
@@ -60,13 +60,13 @@
 						<div class="radio-inline">
 							<input type="radio" name="missionStatementRadio" ng-value="false" ng-model="volunteerInfo.missionAndVisionStatements.accepted" />No
 						</div>
-						<p class="help-text" ng-show="volunteerInfo.missionAndVisionStatements.accepted == false"><a ng-click="showMissionAndVisionStatements()">Please read our mission statement and vision statement before continuing.</a></p>
+						<p class="help-block" ng-show="volunteerInfo.missionAndVisionStatements.accepted == false"><a ng-click="showMissionAndVisionStatements()">Please read our mission statement and vision statement before continuing.</a></p>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<p class="lead text-center">About You</p>
-				<div class="col-lg-3 col-md-3">
+				<div class="col-lg-4 col-md-4">
 					<div class="form-group">
 						<label>Name</label>
 						<input type="text" class="form-control" ng-model="volunteerInfo.name" placeholder="Name" />
@@ -80,8 +80,8 @@
 					</div>
 					<div class="form-group">
 						<label>Mailing Address</label>
-						<div class="checkbox">
-							<input type="checkbox" ng-model="volunteerInfo.mailingAddress.isSame" />Same as home address
+						<div class="checkbox" style="margin-left:20px;">
+							Same as home address <input type="checkbox" ng-model="volunteerInfo.mailingAddress.isSame" />
 						</div>
 						<div ng-hide="volunteerInfo.mailingAddress.isSame">
 							<input type="text" class="form-control"  ng-model="volunteerInfo.homeAddress.street" placeholder="Street Address" />
@@ -90,6 +90,8 @@
 							<input type="number" class="form-control" ng-model="volunteerInfo.homeAddress.zip" placeholder="Zip Code" />
 						</div>
 					</div>
+				</div>
+				<div class="col-lg-4 col-md-4">
 					<div class="form-group">
 						<label>Gender</label><br />
 						<div class="radio-inline">
@@ -97,6 +99,32 @@
 						</div>
 						<div class="radio-inline">
 							<input type="radio" id="genderRadio" ng-value="female" ng-model="volunteerInfo.gender" />Female
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Marital Status</label>
+						<div class="radio-inline">
+							<input type="radio" id="maritalRadio" ng-value="false" ng-model="volunteerInfo.maritalStatus.isMarried" />Single
+						</div>
+						<div class="radio-inline">
+							<input type="radio" id="maritalRadio" ng-value="true" ng-model="volunteerInfo.maritalStatus.isMarried" />Married
+						</div>
+					</div>
+					<div class="form-group" ng-show="volunteerInfo.maritalStatus.isMarried == true">
+						<label>Spouse's Name</label>
+						<input type="text" class="form-control" ng-model="volunteerInfo.maritalStatus.spouseName" placeholder="Spouse's Name" />
+					</div>
+					<div class="form-group" ng-show="volunteerInfo.maritalStatus.isMarried == true">
+						<label>Have you discussed participating in CCC with your spouse?</label>
+						<div class="radio-inline">
+							<input type="radio" id="spouseRadio" ng-value="true" ng-model="volunteerInfo.maritalStatus.discussedWithSpouse" />Yes
+						</div>
+						<div class="radio-inline">
+							<input type="radio" id="spouseRadio" ng-value="false" ng-model="volunteerInfo.maritalStatus.discussedWithSpouse" />No
+						</div>
+						<div class="form-group" ng-show="volunteerInfo.maritalStatus.discussedWithSpouse == true">
+							<label>What were their thoughts?  Did they have any concerns?</label>
+							<textarea rows="2" ng-model="volunteerInfo.maritalStatus.spouseThoughts"></textarea>
 						</div>
 					</div>
 				</div>
