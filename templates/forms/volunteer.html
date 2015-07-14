@@ -20,6 +20,7 @@
 	<div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 hidden-sm hidden-xs">
 		<form class="form">
 			<div class="row">
+				<!--BYLAWS AND TERMS AGREEMENTS AREAS -->
 				<p class="lead text-center">Your Missional Journey...</p>
 				<div class="col-md-4 col-lg-4">
 					<div class="form-group">
@@ -64,8 +65,12 @@
 					</div>
 				</div>
 			</div>
+			
+			<!--MAIN FORM SECTION -->
 			<div class="row" style="margin-top: 40px;">
+				<!--COLUMN 1 -->
 				<div class="col-lg-4 col-md-4">
+					<!--ABOUT YOU -->
 					<p class="lead text-center">About you</p>
 					<div class="form-group">
 						<label>Name</label>
@@ -103,14 +108,16 @@
 					<div class="form-group">
 						<label>Gender</label><br />
 						<div class="radio-inline">
-							<input type="radio" id="genderRadio" ng-value="'male''" ng-model="volunteerInfo.gender" />Male
+							<input type="radio" id="genderRadio" value="male" ng-model="volunteerInfo.gender" />Male
 						</div>
 						<div class="radio-inline">
-							<input type="radio" id="genderRadio" ng-value="'female''" ng-model="volunteerInfo.gender" />Female
+							<input type="radio" id="genderRadio" value="female" ng-model="volunteerInfo.gender" />Female
 						</div>
 					</div>
 				</div>
+				<!--COLUMN 2 -->
 				<div class="col-lg-4 col-md-4">
+					<!--FAMILY INFO -->
 					<p class="lead text-center">Your Family</p>
 					<div class="form-group">
 						<label>Marital Status</label><br />
@@ -151,8 +158,26 @@
 							<textarea rows="3" class="form-control" ng-model="volunteerInfo.children.details"></textarea>
 						</div>
 					</div>
+					<!--CRIMINAL HISTORY AND BACKGROUND CHECK -->
+					<hr />
+					<p class="lead">Criminal History and Background Information</p>
+					<p class="help-block"><a ng-click="criminalHistoryWhy = !criminalHistoryWhy" ng-init="criminalHistoryWhy = false">Why we need this information</a>
+					<div collapse="criminalHistoryWhy">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Why do we need this information?</h3>
+								<p class="text-right">Close <i class="fa fa-times-circle"></i></p>
+							</div>
+							<div class="panel-body">
+								CCC’s ministry entails working with society’s most vulnerable people including children, the elderly, special needs people, hospitalized patients, those confined to nursing homes or hospice care, and individuals coping with personal tragedies or natural disasters.  Thus, CCC conducts background checks to appropriately screen applicants wishing to represent our organization.  Background checks include criminal history, sex-offender registries, and, if participating in fiduciary duties on CCC’s behalf, a credit report review.  The identities of reporting agencies will be disclosed to CCC applicants, and all information received from reporting agencies will be available for inspection by the applicant.  Conviction(s) for a criminal offense(s) may not necessarily preclude an individual from serving God with CCC.  The nature of the offense(s), the time elapsed since the occurrence of the offense(s), the relevance of the offense(s) to CCC’s mission, as well as other factors of relevance will be taken in consideration.  
+							</div>
+						</div>
+					</div>
+					
 				</div>
+				<!--COLUMN 3 -->
 				<div class="col-md-4 col-lg-4">
+					<!--CHURCH INFO -->
 					<p class="lead text-center">Your Church</p>
 					<p class="help-block">If you currently do not have a home church or are not attending a church, please feel free to leave this area blank.  We understand that not everyone is established at a particular church and that circumstances arise in life that prevent us from becoming a member at a church.  If you are interested in seeking out membership at a church, please let us know and we will happily assist you with finding a church home.</p>
 					<div class="form-group">
@@ -184,6 +209,7 @@
 						<input type="text" class="form-control" ng-model="volunteerInfo.church.personToContact" placeholder="Name" />
 					</div>
 					<hr />
+					<!--EMERGENCY CONTACT INFO -->
 					<p class="lead text-center">Emergency Contact</p>
 					<p class="help-block">While we never anticipate anything bad to happen while out in the field, we like to be prepared.  In case something were to happen while serving with our ministry, we would like to have an emergency contact on file.  If you wish to not have an emergency contact on file with us, we understand.  Opting out of having an emergency contact on file with us will not disqualify you from serving with our ministry.</p>
 					<div class="form-group">
