@@ -161,22 +161,49 @@
 					<!--CRIMINAL HISTORY AND BACKGROUND CHECK -->
 					<hr />
 					<p class="lead">Criminal History and Background Information</p>
-					<p class="help-block"><a ng-click="criminalHistoryWhy = !criminalHistoryWhy" ng-init="criminalHistoryWhy = true">Why we need this information</a>
+					<p class="help-block"><a ng-click="criminalHistoryWhy = !criminalHistoryWhy" ng-init="criminalHistoryWhy = true">Why we need this information</a></p>
 					<div collapse="criminalHistoryWhy">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h3 class="panel-title">Why do we need this information?</h3>
-
 							</div>
 							<div class="panel-body">
-								CCC’s ministry entails working with society’s most vulnerable people including children, the elderly, special needs people, hospitalized patients, those confined to nursing homes or hospice care, and individuals coping with personal tragedies or natural disasters.  Thus, CCC conducts background checks to appropriately screen applicants wishing to represent our organization.  Background checks include criminal history, sex-offender registries, and, if participating in fiduciary duties on CCC’s behalf, a credit report review.  The identities of reporting agencies will be disclosed to CCC applicants, and all information received from reporting agencies will be available for inspection by the applicant.  Conviction(s) for a criminal offense(s) may not necessarily preclude an individual from serving God with CCC.  The nature of the offense(s), the time elapsed since the occurrence of the offense(s), the relevance of the offense(s) to CCC’s mission, as well as other factors of relevance will be taken in consideration.  
+								<p>CCC's ministry entails working with society's most vulnerable people including children, the elderly, special needs people, hospitalized patients, those confined to nursing homes or hospice care, and individuals coping with personal tragedies or natural disasters.  <mark>Thus, CCC conducts background checks to appropriately screen applicants wishing to represent our organization.</mark>  Background checks include criminal history and sex offender registries.  In addition, a credit report review may be requested for those participating in fiduciary duties on CCC's behalf.  The identities of reporting agencies will be disclosed to CCC applicants, and all information recieved from reporting agencies will be available for inspection by the applicant if requested.  <strong><mark>Conviction(s) for a criminal ofense may not necessarily preclude an individual from serving God through CCC.  The nature of the offense(s), the time elapsed since the occurance of the offense(s), the relevance of the offense(s) to CCC's mission, as well as other factors of relevance will be taken into consideration.</mark></strong></p>
 							</div>
 							<div class="panel-footer">
 								<p class="text-right" ng-click="criminalHistoryWhy = true">Close <i class="fa fa-times-circle"></i></p>
 							</div>
 						</div>
 					</div>
-					
+					<div class="form-group">
+						<label>Have you ever been adjudicated guilty of a felony offense?</label>
+						<p class="help-block">Please do not consider juvenile, sealed, or expunged records when answering this question.</p>
+						<div class="radio-inline">
+							<input type="radio" id="felonRadio" ng-value="true" ng-model="volunteerInfo.criminalRecord.convicted" />Yes
+						</div>
+						<div class="radio-inline">
+							<input type="radio" id="felonRadio" ng-value="false" ng-model="volunteerInfo.criminalRecord.convicted" />No
+						</div>
+						<div class="form-group" ng-show="volunteerInfo.criminalRecord.convicted == true">
+							<label>Please describe the nature of the offense(s)</label>
+							<textarea class="form-group" ng-model="volunteerInfo.criminalRecord.explain"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Do you agree to pay for a background check (and credit history report if required) to be performed by CCC's background report provider?</label>
+						<p class="help-block">CCC will provide the reported information if requested.  To request a report please email us at <a href="mailto:info@comfortcaninesforchrist.org">info@comfortcaninesforchrist.org</a></p>
+						<div class="radio-inline">
+							<input type="radio" id="backgroundRadio" ng-value="true" ng-model="volunteerInfo.backgroundCheck.consent" />Yes
+						</div>
+						<div class="radio-inline">
+							<input type="radio" id="backgroundRadio" ng-value="false" ng-model="volunteerInfo.backgroundCheck.consent" />No
+						</div>
+						<div class="form-group" ng-show="volunteerInfo.backgroundCheck.consent == false">
+							<label>Please tell us why you refuse to consent to a background check.</label>
+							<p class="help-block">CCC requires all volunteers to have a background check performed, however we will consider this refusal to consent on a case-by-case basis.  Someone from CCC may contact you using the information you provided to further gather information.</p>
+							<textarea class="form-control" rows="2" ng-model="volunteerInfo.backgroundCheck.explain"></textarea>
+						</div>
+					</div>
 				</div>
 				<!--COLUMN 3 -->
 				<div class="col-md-4 col-lg-4">
