@@ -44,6 +44,7 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 				other: ""
 			},
 			email: "",
+			password: "",
 			church: {
 				isAffiliated: null,
 				nameOfChurch: "",
@@ -57,7 +58,7 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 				personToContact: ""
 			},
 			emergencyContact: {
-				provided: true,
+				provided: null,
 				name: "",
 				address: {
 					street: "",
