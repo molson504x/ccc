@@ -1,4 +1,4 @@
-comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '$log', 'md5'
+comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '$log', 'md5',
 	function($scope, $modal, $log, md5) {
 		//Used for the logins on all of the forms
 		$scope.userInfo = {
