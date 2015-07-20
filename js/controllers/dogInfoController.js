@@ -1,5 +1,5 @@
-comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '$log',
-	function($scope, $modal, $log) {
+comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '$log', 'md5'
+	function($scope, $modal, $log, md5) {
 		//Used for the logins on all of the forms
 		$scope.userInfo = {
 			email: null,
@@ -46,6 +46,13 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 		
 		//FUNCTIONS BELOW
 		$scope.dogInfoLogin = function() {
+			var userInfo = {
+				email: $scope.userInfo.email,
+				password: md5.createHash($scope.userInfo.password || '')
+			};
+			
+			debugger;
+			
 			//TODO: go fetch the list of dogs from the DB
 			var dogs = ['dog 1', 'dog 2', 'dog 3'];
 			

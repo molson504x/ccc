@@ -1,5 +1,5 @@
 var comfortCanines = angular.module('comfortCanines', ['ngRoute', 'comfortCaninesControllers']);
-var comfortCaninesControllers = angular.module('comfortCaninesControllers', ['ui.bootstrap']);
+var comfortCaninesControllers = angular.module('comfortCaninesControllers', ['ui.bootstrap', 'angular-md5']);
 
 //CONFIG
 comfortCanines.config(['$routeProvider', function($routeProvider) {
