@@ -1,5 +1,5 @@
-comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$modal', '$log', '$http',
-	function($scope, $modal, $log, $http) {
+comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$modal', '$log', '$http', 'md5',
+	function($scope, $modal, $log, $http, md5) {
 		$scope.userInfo = {
 			email: "",
 			password: ""
