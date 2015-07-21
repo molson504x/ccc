@@ -1,6 +1,12 @@
-comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$modal', '$log',
-	function($scope, $modal, $log) {
+comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$modal', '$log', '$http',
+	function($scope, $modal, $log, $http) {
+		$scope.userInfo = {
+			email: "",
+			password: ""
+		};
+		
 		$scope.volunteerInfo = {
+			volunteerId: null,
 			acceptedChrist: {
 				accepted: null,
 				explain: ""
@@ -107,5 +113,31 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 			
 			$scope.volunteerInfo.missionAndVisionStatements.accepted = null;
 		};
+		
+		$scope.getUserInfo = function() {
+			//TODO: make the request to the api to get the user's info...
+			
+			//TODO: set $scope.volunteerInfo to the returned object
+		}
+		
+		$scope.submitUserInfo = function() {
+			var userInfo = $scope.volunteerInfo;
+			userInfo.password = md5.createHash($scope.volunteerInfo.password || '');
+			
+			var requestMethod = 'PUT';
+			if (userInfo.volunteerId != null)
+				requestMethod = 'POST';
+				
+			//TODO: make the ajax call using the right method out to the server....	
+			$http({
+				method: requestMethod,
+				url: comfortCaninesCommon.ApiBase + 'volunteer',
+				data: userInfo
+			}).success(function(data, status) {
+				debugger;
+			}).error(function(data, status) {
+				debugger;
+			})
+		}
 	}
 ]);

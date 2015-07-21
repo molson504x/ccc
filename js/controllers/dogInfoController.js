@@ -67,6 +67,7 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				}
 			});
 			
+			//TODO: Make another call to go get dog's info
 			modalInstance.result.then(function(selectedItem){
 				alert('User selected ' + selectedItem);
 			},
