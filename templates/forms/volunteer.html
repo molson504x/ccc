@@ -17,7 +17,7 @@
 	</div>
 </div>
 <div class="row hidden-xs hidden-sm" style="margin-bottom:40px;">
-	<div class="col-md-8 col-lg-8 col-md-offset-3 col-lg-offset-3">
+	<div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
 		<p class="lead" style="margin-bottom:10px;">Need to update your existing information?  Please log in with your email address and password below.</p>
 		<form class="form-inline">
 			<div class="form-group">
@@ -300,23 +300,23 @@
 					<!--ACTIVITIES INTEREST -->
 					<div class="form-group">
 						<label>What activities are you interested in volunteering to perform with CCC?</label>
-						<div class="checkbox">
-							<input type="checkbox" style="margin-left:20px;" ng-model="volunteerInfo.activitiesInterest.admin" />Administrative
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.admin" />Administrative
 						</div>
-						<div class="checkbox">
-							<input type="checkbox" style="margin-left:20px;" ng-model="volunteerInfo.activitiesInterest.fundraising" />Fundraising
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.fundraising" />Fundraising
 						</div>
-						<div class="checkbox">
-							<input type="checkbox" style="margin-left:20px;" ng-model="volunteerInfo.activitiesInterest.training" />Training Dog(s)
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.training" />Training Dog(s)
 						</div>
-						<div class="checkbox">
-							<input type="checkbox" style="margin-left:20px;" ng-model="volunteerInfo.activitiesInterest.handling" />Handling Dog(s) at events or visitations
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.handling" />Handling Dog(s) at events or visitations
 						</div>
-						<div class="checkbox">
-							<input type="checkbox" style="margin-left:20px;" ng-model="volunteerInfo.activitiesInterest.care" />Dog Care and Grooming
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.care" />Dog Care and Grooming
 						</div>
-						<div class="checkbox">
-							<input type="checkbox" style="margin-left:20px;" ng-model="volunteerInfo.activitiesInterest.foster" />Foster or Temporarily House CCC Dog(s)
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.foster" />Foster or Temporarily House CCC Dog(s)
 						</div>
 						<div class="checkbox" style="margin-left:20px;">
 							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.other.other" />Other
@@ -354,13 +354,13 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-9 col-lg-9">
+				<div class="col-md-12 col-lg-12">
 					<p class="text-center bg-danger"><b>Clicking the "submit" button below indicates that you have read our bylaws and rules, and that you agree to adhere to them.  In addition, it indicates to us that the information that you have provided to us is up-to-date to the best of your knowledge and that if any of this information changes you will inform us at the soonest possible convenience.</b></p>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-5 col-lg-5 col-md-offset-2 col-lg-offset-2">
-					<button type="button" class="btn btn-block btn-primary" ng-click="dogInfoSubmit">Submit</button><br />
+				<div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
+					<button type="button" class="btn btn-block btn-primary" ng-click="submitUserInfo">Submit</button><br />
 					<button type="reset" class="btn btn-block btn-warning">Clear</button>
 				</div>
 			</div>
