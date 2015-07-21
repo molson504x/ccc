@@ -1,5 +1,5 @@
-comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '$log', 'md5',
-	function($scope, $modal, $log, md5) {
+comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '$log', 'md5', '$http',
+	function($scope, $modal, $log, md5, $http) {
 		//Used for the logins on all of the forms
 		$scope.userInfo = {
 			email: null,
@@ -8,6 +8,8 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 		
 		//Object to be created on the dog information form
 		$scope.dogInfo = {
+			dogId: "",
+			volunteerId: null,
 			name: "",
 			breed: "",
 			gender: "",
@@ -18,6 +20,9 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 			vetInfo: {
 				name: "",
 				address: "",
+				city: "",
+				state: "",
+				zip: "",
 				phoneNumber: ""
 			},
 			healthIssues: {
@@ -51,10 +56,33 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				password: md5.createHash($scope.userInfo.password || '')
 			};
 			
+			var volunteerId = '';
+			
 			debugger;
 			
-			//TODO: go fetch the list of dogs from the DB
-			var dogs = ['dog 1', 'dog 2', 'dog 3'];
+			//TODO: go get the volunteer ID from the API
+			$http.get({
+				url: comfortCaninesCommon.ApiBase + 'volunteer/getId',
+				data: userInfo
+			}).success(function(data, status) {
+				debugger;
+				if (data.Success == true) {
+					volunteerId = data.Data;
+					$scope._dogModalShow(volunteerId);
+				}
+			}).error(function(data, success) {
+				//DO SOMETHING....?
+			});	
+		};
+		
+		$scope._dogModalShow = function(volunteerId) {		
+			//TODO: go fetch the list of dogs from the API
+			var dogs = [
+					{id: '0', name: 'Fido'},
+					{id: '1', name: 'Lassie'},
+					{id: '2', name: 'Rover'},
+					{id: '4', name: 'Old Yeller'}
+				];
 			
 			var modalInstance = $modal.open({
 				animation: true,
@@ -67,13 +95,14 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				}
 			});
 			
-			//TODO: Make another call to go get dog's info
 			modalInstance.result.then(function(selectedItem){
 				alert('User selected ' + selectedItem);
+				//TODO: set the dogInfo object...
+				$scope.dogInfo.volunteerId = volunteerId;
 			},
 			function() {
 				$log.info('Modal window closed at ' + new Date());
 			});
-		}
+		};
 	}
 ]);
