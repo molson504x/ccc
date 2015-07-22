@@ -128,7 +128,6 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 			if (userInfo.volunteerId != null)
 				requestMethod = 'POST';
 				
-			//TODO: make the ajax call using the right method out to the server....	
 			$http({
 				method: requestMethod,
 				url: comfortCaninesCommon.ApiBase + 'volunteer',

@@ -1,4 +1,4 @@
 var comfortCaninesCommon = {
-	ApiBase: 'http://comfortcaninesapi.azurewebsites.net/api/',
+	ApiBase: 'http://localhost:52988/api/',
 	
 };
