@@ -87,9 +87,8 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 		};
 		
 		$scope._dogModalShow = function(volunteerId) {		
-			$http.get({
-				url: comfortCaninesCommon.ApiBase + 'dog/' + volunteerId
-			}).success(function(data, status) {
+			$http.get(comfortCaninesCommon.ApiBase + 'dog/' + volunteerId)
+			.success(function(data, status) {
 				debugger;
 				if (data.Success == true) {
 					$scope._showDogSelectionModal(data.Data);
