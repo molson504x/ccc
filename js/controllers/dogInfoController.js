@@ -80,7 +80,7 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 			}).error(function(data, success) {
 				var alertMessage = "An error occurred while handling your request.  Please try again.";
 				if (data.Error != null)
-					alertMessage += "\n" + data.Error[0];
+					alertMessage += "\n" + data.Errors[0];
 					
 				alert(alertMessage);
 			});	
@@ -94,10 +94,8 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 					$scope._showDogSelectionModal(data.Data);
 				}
 				else {
-					var alertMessage = "An error occurred while handling your request.  Please try again.";
-					if (data.Errors != null)
-						alertMessage += "\n" + data.Error[0];
-					alert(alertMessage);
+					$scope.dogInfo.volunterId = volunteerId;
+					alert('We were unable to find a dog for your account.  Please add a new dog using the form.');
 				}
 			}).error(function(data, status) {
 				var alertMessage = "An error occurred while handling your request.  Please try again.";
