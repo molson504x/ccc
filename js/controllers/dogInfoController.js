@@ -73,7 +73,7 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				}
 				else {
 					var alertMessage = "An error occurred while handling your request.  Please try again.";
-					if (data.Error != null)
+					if (data.Errors != null)
 						alertMessage += "\n" + data.Error[0];
 					alert(alertMessage);
 				}					
@@ -95,7 +95,7 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				}
 				else {
 					var alertMessage = "An error occurred while handling your request.  Please try again.";
-					if (data.Error != null)
+					if (data.Errors != null)
 						alertMessage += "\n" + data.Error[0];
 					alert(alertMessage);
 				}
@@ -103,33 +103,6 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				var alertMessage = "An error occurred while handling your request.  Please try again.";
 				alert(alertMessage);
 			});
-		
-			// var dogs = [
-			// 		{id: '0', name: 'Fido'},
-			// 		{id: '1', name: 'Lassie'},
-			// 		{id: '2', name: 'Rover'},
-			// 		{id: '4', name: 'Old Yeller'}
-			// 	];
-			// 
-			// var modalInstance = $modal.open({
-			// 	animation: true,
-			// 	templateUrl: 'templates/forms/dogModal.html',
-			// 	controller: 'DogModalController',
-			// 	resolve: {
-			// 		items: function() {
-			// 			return dogs;
-			// 		}
-			// 	}
-			// });
-			// 
-			// modalInstance.result.then(function(selectedItem){
-			// 	alert('User selected ' + selectedItem);
-			// 	//TODO: set the dogInfo object...
-			// 	$scope.dogInfo.volunteerId = volunteerId;
-			// },
-			// function() {
-			// 	$log.info('Modal window closed at ' + new Date());
-			// });
 		};
 		
 		$scope._showDogSelectionModal = function(dogInfo) {
@@ -145,9 +118,7 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 			});
 			
 			modalInstance.result.then(function(selectedItem) {
-				$scope.$apply(function(scope) {
-					scope.dogInfo = selectedItem;
-				});
+				$scope.dogInfo = selectedItem;
 			},
 			function() {
 				$log.info('Modal window closed at ' + new Date());
