@@ -61,7 +61,8 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 			debugger;
 			
 			//TODO: go get the volunteer ID from the API
-			$http.get({
+			$http({
+				method: 'GET',
 				url: comfortCaninesCommon.ApiBase + 'volunteer/getId',
 				data: userInfo
 			}).success(function(data, status) {
