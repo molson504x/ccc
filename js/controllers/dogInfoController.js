@@ -93,7 +93,7 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 					$scope._showDogSelectionModal(data.Data);
 				}
 				else {
-					$scope.dogInfo.volunterId = volunteerId;
+					$scope.dogInfo.volunteerId = volunteerId;
 					$scope.showDogForm = true;
 					alert('We were unable to find a dog for your account.  Please add a new dog using the form.');
 				}
