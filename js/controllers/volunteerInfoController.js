@@ -1,5 +1,5 @@
-comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$modal', '$log', '$http', 'md5',
-	function($scope, $modal, $log, $http, md5) {
+comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$modal', '$log', '$http', 'md5', '$location',
+	function($scope, $modal, $log, $http, md5, $location) {
 		$scope.userInfo = {
 			email: "",
 			password: ""
@@ -133,9 +133,10 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 				url: comfortCaninesCommon.ApiBase + 'volunteer',
 				data: userInfo
 			}).success(function(data, status) {
-				debugger;
+				alert("Thank you!  Your information has been submitted.");
+				$location.path("/missions/forms");
 			}).error(function(data, status) {
-				debugger;
+				alert("An error was encountered while handling your request.  Please try again.");
 			})
 		}
 	}

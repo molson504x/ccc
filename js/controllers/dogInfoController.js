@@ -67,13 +67,13 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				url: comfortCaninesCommon.ApiBase + 'volunteer/getId',
 				data: userInfo
 			}).success(function(data, status) {
-				if (data.Success == true) {
-					volunteerId = data.Data;
+				if (data.success == true) {
+					volunteerId = data.data;
 					$scope._dogModalShow(volunteerId);
 				}
 				else {
 					var alertMessage = "An error occurred while handling your request.  Please try again.";
-					if (data.Errors != null)
+					if (data.errors != null)
 						alertMessage += "\n" + data.Error[0];
 					alert(alertMessage);
 				}					
@@ -89,8 +89,8 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 		$scope._dogModalShow = function(volunteerId) {		
 			$http.get(comfortCaninesCommon.ApiBase + 'dog/' + volunteerId)
 			.success(function(data, status) {
-				if (data.Success == true) {
-					$scope._showDogSelectionModal(data.Data);
+				if (data.success == true) {
+					$scope._showDogSelectionModal(data.data);
 				}
 				else {
 					$scope.dogInfo.volunteerId = volunteerId;
@@ -117,6 +117,7 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 			
 			modalInstance.result.then(function(selectedItem) {
 				$scope.dogInfo = selectedItem;
+				$scope.showDogForm = true;
 			},
 			function() {
 				$log.info('Modal window closed at ' + new Date());
@@ -128,13 +129,13 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				comfortCaninesCommon.ApiBase + 'dog/',
 				$scope.dogInfo
 			).success(function(data, status) {
-				if (data.Success) {
+				if (data.success) {
 					alert("Your dog has been successfully submitted.");
 					$location.path('/ministry/forms');
 				}
 				else { //data.success = false
 					var alertMessage = "An error has occurred while handling your request.  Please try again.";
-					if (data.Errors != null) 
+					if (data.errors != null) 
 						alertMessage += "\n" + data.Errors[0];
 					
 					alert(alertMessage);
