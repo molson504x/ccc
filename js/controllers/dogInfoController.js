@@ -129,7 +129,7 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				$scope.dogInfo
 			).success(function(data, status) {
 				if (data.Success) {
-					alert("Your dog has been successfully added.");
+					alert("Your dog has been successfully submitted.");
 					$location.path('/ministry/forms');
 				}
 				else { //data.success = false
@@ -143,6 +143,6 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				var alertMessage = "An error has occurred while handling your request.  Please try again.";
 				alert(alertMessage);
 			});
-		}
+		};
 	}
 ]);
