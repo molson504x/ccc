@@ -1,5 +1,5 @@
-comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '$log', 'md5', '$http',
-	function($scope, $modal, $log, md5, $http) {
+comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '$log', 'md5', '$http', '$location',
+	function($scope, $modal, $log, md5, $http, $location) {
 		//Used for the logins on all of the forms
 		$scope.userInfo = {
 			email: null,
@@ -62,13 +62,11 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 			
 			debugger;
 			
-			//TODO: go get the volunteer ID from the API
 			$http({
 				method: 'POST',
 				url: comfortCaninesCommon.ApiBase + 'volunteer/getId',
 				data: userInfo
 			}).success(function(data, status) {
-				debugger;
 				if (data.Success == true) {
 					volunteerId = data.Data;
 					$scope._dogModalShow(volunteerId);
@@ -91,7 +89,6 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 		$scope._dogModalShow = function(volunteerId) {		
 			$http.get(comfortCaninesCommon.ApiBase + 'dog/' + volunteerId)
 			.success(function(data, status) {
-				debugger;
 				if (data.Success == true) {
 					$scope._showDogSelectionModal(data.Data);
 				}
@@ -125,5 +122,27 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				$log.info('Modal window closed at ' + new Date());
 			});
 		};
+		
+		$scope.dogInfoSubmit = function() {
+			$http.put(
+				comfortCaninesCommon.ApiBase + 'dog/',
+				$scope.dogInfo
+			).success(function(data, status) {
+				if (data.Success) {
+					alert("Your dog has been successfully added.");
+					$location.path('/ministry/forms');
+				}
+				else { //data.success = false
+					var alertMessage = "An error has occurred while handling your request.  Please try again.";
+					if (data.Errors != null) 
+						alertMessage += "\n" + data.Errors[0];
+					
+					alert(alertMessage);
+				}
+			}).error(function(data, status) {
+				var alertMessage = "An error has occurred while handling your request.  Please try again.";
+				alert(alertMessage);
+			});
+		}
 	}
 ]);
