@@ -49,6 +49,8 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 			}
 		};
 		
+		$scope.showDogForm = false;
+		
 		//FUNCTIONS BELOW
 		$scope.dogInfoLogin = function() {
 			var userInfo = {
