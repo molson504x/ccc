@@ -125,10 +125,16 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 		};
 		
 		$scope.dogInfoSubmit = function() {
-			$http.put(
-				comfortCaninesCommon.ApiBase + 'dog/',
-				$scope.dogInfo
-			).success(function(data, status) {
+			var methodToUse = 'PUT';
+			if ($scope.dogInfo != null && $scope.dogInfo.dogId != null) {
+				var methodToUse = 'POST';
+			}
+			
+			$http({
+				url: comfortCaninesCommon.ApiBase + 'dog',
+				method: methodToUse,
+				data: $scope.dogInfo
+			}).success(function(data, status) {
 				if (data.success) {
 					alert("Your dog has been successfully submitted.");
 					$location.path('/ministry/forms');
