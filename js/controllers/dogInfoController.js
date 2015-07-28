@@ -73,14 +73,12 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				}
 				else {
 					var alertMessage = "An error occurred while handling your request.  Please try again.";
-					if (data.errors != null)
+					if (data.errors != null && data.errors.length > 0)
 						alertMessage += "\n" + data.Error[0];
 					alert(alertMessage);
 				}					
 			}).error(function(data, success) {
 				var alertMessage = "An error occurred while handling your request.  Please try again.";
-				if (data.Error != null)
-					alertMessage += "\n" + data.Errors[0];
 					
 				alert(alertMessage);
 			});	
@@ -141,7 +139,7 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 				}
 				else { //data.success = false
 					var alertMessage = "An error has occurred while handling your request.  Please try again.";
-					if (data.errors != null) 
+					if (data.errors != null && data.errors.length > 0) 
 						alertMessage += "\n" + data.Errors[0];
 					
 					alert(alertMessage);
