@@ -124,7 +124,7 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 		
 		$scope.dogInfoSubmit = function() {
 			var methodToUse = 'PUT';
-			if ($scope.dogInfo != null && $scope.dogInfo.dogId != null) {
+			if ($scope.dogInfo != null && $scope.dogInfo.dogId != "") {
 				methodToUse = 'POST';
 			}
 			
