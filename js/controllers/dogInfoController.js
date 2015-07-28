@@ -88,6 +88,7 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 			$http.get(comfortCaninesCommon.ApiBase + 'dog/' + volunteerId)
 			.success(function(data, status) {
 				if (data.success == true) {
+					$scope.dogInfo.volunteerId = volunteerId;
 					$scope._showDogSelectionModal(data.data);
 				}
 				else {
@@ -114,7 +115,8 @@ comfortCaninesControllers.controller('dogInfoController', ['$scope', '$modal', '
 			});
 			
 			modalInstance.result.then(function(selectedItem) {
-				$scope.dogInfo = selectedItem;
+				if (selectedItem != null)
+					$scope.dogInfo = selectedItem;
 				$scope.showDogForm = true;
 			},
 			function() {
