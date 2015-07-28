@@ -9,7 +9,7 @@ comfortCanines.config(['$routeProvider', function($routeProvider) {
 			controller: 'missionController'
 		})
 		.when('/about', {
-			templateUrl: 'templates/construction.html',
+			templateUrl: 'templates/aboutUs.html',
 			controller: 'aboutController'
 		})
 		.when('/dogs', {
