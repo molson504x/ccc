@@ -41,7 +41,7 @@ comfortCanines.config(['$routeProvider', function($routeProvider) {
 			controller: 'ministryPartnersController'
 		})
 		.when('/contact', {
-			templateUrl: 'templates/construction.html',
+			templateUrl: 'templates/contact.html',
 			controller: 'contactController'
 		})
 		.otherwise({
