@@ -10,7 +10,7 @@
 					<li>"It's not your abilities that count, it's your availability!"</li>
 				</ul>
 			</p>
-			<p>Comfort Canines for Christ is <strong>NOT</strong> seeking people with a preselected set of skills who will perfectly fit into a predetermined mold.  Romans 12:6 says "Having gifts that <strong>differ</strong> according to the grace given to us, let us use them."  The bible lists about twenty (20) spiritual gifts that God has bestowed upon those having accepted Christ as their Savior, and CCC welcomes those who God is sending to exercise their particular spiritual gift(s).  Volunteers hav varying degrees of availability, expertise, and interests.  <u>The intent of CCC's application process is not to disqualify people but to aid in determining where and how volunteers' abilities and time can best be applied.</u></p>
+			<p>Comfort Canines for Christ is <strong>NOT</strong> seeking people with a preselected set of skills who will perfectly fit into a predetermined mold.  Romans 12:6 says "Having gifts that <strong>differ</strong> according to the grace given to us, let us use them."  The bible lists about twenty (20) spiritual gifts that God has bestowed upon those having accepted Christ as their Savior, and CCC welcomes those who God is sending to exercise their particular spiritual gift(s).  Volunteers have varying degrees of availability, expertise, and interests.  <u>The intent of CCC's application process is not to disqualify people but to aid in determining where and how volunteers' abilities and time can best be applied.</u></p>
 			<p>Volunteers must be age 18 or above; however, children of volunteers are welcome to participate with CCC under the supervision or permission of their parent(s) or guardian(s).  CCC is a strong advocate of youth participation within our ministry, and allowable activities by youth will be determined on a case by case basis.</p>
 			<p>CCC's ministry entails working with society's most vulnerable people including children, the elderly, special needs people, hospitalized patients, those confined to nursing homes or hospice care, and individuals coping with personal tragedies or natural disasters.  <mark>Thus, CCC conducts background checks to appropriately screen applicants wishing to represent our organization.</mark>  Background checks include criminal history and sex offender registries.  In addition, a credit report review may be requested for those participating in fiduciary duties on CCC's behalf.  The identities of reporting agencies will be disclosed to CCC applicants, and all information recieved from reporting agencies will be available for inspection by the applicant if requested.  <strong><mark>Conviction(s) for a criminal ofense may not necessarily preclude an individual from serving God through CCC.  The nature of the offense(s), the time elapsed since the occurance of the offense(s), the relevance of the offense(s) to CCC's mission, as well as other factors of relevance will be taken into consideration.</mark></strong></p>
 		</div>
@@ -63,7 +63,7 @@
 							<input type="radio" name="doctrinalRadio" ng-value="false" ng-model="volunteerInfo.doctrinalStatement.accepted" />No
 						</div>
 						<div class="form-group" ng-show="(volunteerInfo.doctrinalStatement.accepted == false)">
-							<label>What part of our doctrinal statement do you disagree with?</label>
+							<label>With which part(s) of our doctrinal statement or beliefs do you disagree with?</label>
 							<textarea rows="2" class="form-control" ng-model="volunteerInfo.doctrinalStatement.explain"></textarea>
 							<p class="help-block">You may still complete the application, but we may contact you with further questions about your response.</p>
 						</div>
@@ -177,7 +177,7 @@
 							<input type="radio" id="childrenRadio" ng-value="false" ng-model="volunteerInfo.children.hasChildren" />No
 						</div>
 						<div class="form-group" ng-show="volunteerInfo.children.hasChildren == true">
-							<label>Can you provide some details (name and age) about them?  Will any of them be participating in CCC?</label>
+							<label>Please list any children under age 18 who will be participating with you in CCC activities.</label>
 							<textarea rows="3" class="form-control" ng-model="volunteerInfo.children.details"></textarea>
 						</div>
 					</div>
@@ -264,16 +264,7 @@
 					<hr />
 					<!--EMERGENCY CONTACT INFO -->
 					<p class="lead text-center">Your Emergency Contact</p>
-					<p class="help-block">While we never anticipate anything bad to happen while out in the field, we like to be prepared.  In case something were to happen while serving with our ministry, we would like to have an emergency contact on file.  If you wish to not have an emergency contact on file with us, we understand.  Opting out of having an emergency contact on file with us will not disqualify you from serving with our ministry.</p>
-					<div class="form-group">
-						<label>Do you wish to list an emergency contact with us?</label><br />
-						<div class="radio-inline">
-							<input type="radio" id="emergencyContactRadio" ng-value="true" ng-model="volunteerInfo.emergencyContact.provided" />Yes
-						</div>
-						<div class="radio-inline">
-							<input type="radio" id="emergencyContactRadio" ng-value="false" ng-model="volunteerInfo.emergencyContact.provided" />No
-						</div>
-					</div>
+					<p class="help-block">While we never anticipate anything bad to happen while out in the field, we like to be prepared.  In case something were to happen while serving with our ministry, we would like to have an emergency contact on file.  If you wish to join our ministry without listing an emergency contact, please email us at <a href="mailto:info@comfortcaninesforchrist.org">info@comfortcaninesforchrist.org</a> so we may request more information.</p>
 					<div class="form-group" ng-show="volunteerInfo.emergencyContact.provided == true">
 						<label>Name</label>
 						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.name" placeholder="Emergency Contact Name" />

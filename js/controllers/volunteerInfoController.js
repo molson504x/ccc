@@ -52,7 +52,7 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 			email: "",
 			password: "",
 			church: {
-				isAffiliated: null,
+				isAffiliated: true,
 				nameOfChurch: "",
 				address: {
 					street: "",
@@ -64,7 +64,7 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 				personToContact: ""
 			},
 			emergencyContact: {
-				provided: null,
+				provided: true,
 				name: "",
 				address: {
 					street: "",
