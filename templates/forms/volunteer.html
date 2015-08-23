@@ -137,6 +137,52 @@
 							<input type="radio" id="genderRadio" value="female" ng-model="volunteerInfo.gender" />Female
 						</div>
 					</div>
+					<hr />
+					<!-- YOUR INVOLVEMENT WITH US -->
+					<p class="lead text-center">Your Involvement With Us</p>
+					<!--ACTIVITIES INTEREST -->
+					<div class="form-group">
+						<label>What activities are you interested in volunteering to perform with CCC?</label>
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.admin" />Administrative
+						</div>
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.fundraising" />Fundraising
+						</div>
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.training" />Training Dog(s)
+						</div>
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.handling" />Handling Dog(s) at events or visitations
+						</div>
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.care" />Dog Care and Grooming
+						</div>
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.foster" />Foster or Temporarily House CCC Dog(s)
+						</div>
+						<div class="checkbox" style="margin-left:20px;">
+							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.other.other" />Other
+						</div>
+						<div class="form-group" ng-show="volunteerInfo.activitiesInterest.other.other == true">
+							<textarea rows="2" class="form-control" ng-model="volunteerInfo.activitiesInterest.other.explain"></textarea>
+						</div>
+					</div>
+					<!--EXPERIENCE -->
+					<div class="form-group">
+						<label>Do you have a dog you are planning on utilizing as a part of CCC?</label><br />
+						<div class="radio-inline">
+							<input type="radio" id="hasDogRadio" ng-value="true" ng-model="volunteerInfo.hasADog" />Yes
+						</div>
+						<div class="radio-inline">
+							<input type="radio" id="hasDogRadio" ng-value="false" ng-model="volunteerInfo.hasADog" />No
+						</div>
+						<p class="help-block" ng-show="volunteerInfo.hasADog == true">Please make sure you fill out the dog information form and send us your dog's medical certificate filled out by your veteranarian.  Both of these forms can be found on the "forms" page.</p>
+					</div>
+					<div class="form-group">
+						<label>Please describe to us what experience you have training, caring for, or handling dogs.</label>
+						<textarea rows="5" class="form-control" ng-model="volunteerInfo.experience"></textarea>
+					</div>
 				</div>
 				<!--COLUMN 2 -->
 				<div class="col-lg-4 col-md-4">
@@ -180,6 +226,27 @@
 							<label>Please list any children under age 18 who will be participating with you in CCC activities.</label>
 							<textarea rows="3" class="form-control" ng-model="volunteerInfo.children.details"></textarea>
 						</div>
+					</div>
+					<hr />
+					<!--EMERGENCY CONTACT INFO -->
+					<p class="lead text-center">Your Emergency Contact</p>
+					<p class="help-block">While we never anticipate anything bad to happen while out in the field, we like to be prepared.  In case something were to happen while serving with our ministry, we would like to have an emergency contact on file.  If you wish to join our ministry without listing an emergency contact, please email us at <a href="mailto:info@comfortcaninesforchrist.org">info@comfortcaninesforchrist.org</a> so we may request more information.</p>
+					<div class="form-group" ng-show="volunteerInfo.emergencyContact.provided == true">
+						<label>Name</label>
+						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.name" placeholder="Emergency Contact Name" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.relationship" placeholder="Relationship" />
+					</div>
+					<div class="form-group" ng-show="volunteerInfo.emergencyContact.provided == true">
+						<label>Address</label>
+						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.address.street" placeholder="Street Address" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.address.city" placeholder="City" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.address.state" placeholder="State" />
+						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.address.zip" placeholder="Zip" />
+					</div>
+					<div class="form-group" ng-show="volunteerInfo.emergencyContact.provided == true">
+						<label>Phone Number</label>
+						<input type="tel" class="form-control" ng-model="volunteerInfo.emergencyContact.phoneNumber.primary" placeholder="Phone Number" />
+						<input type="tel" class="form-control" ng-model="volunteerInfo.emergencyContact.phoneNumber.secondary" placeholder="Other Phone Number" />
 					</div>
 					<!--CRIMINAL HISTORY AND BACKGROUND CHECK -->
 					<hr />
@@ -262,25 +329,11 @@
 						<input type="text" class="form-control" ng-model="volunteerInfo.church.personToContact" placeholder="Name" />
 					</div>
 					<hr />
-					<!--EMERGENCY CONTACT INFO -->
-					<p class="lead text-center">Your Emergency Contact</p>
-					<p class="help-block">While we never anticipate anything bad to happen while out in the field, we like to be prepared.  In case something were to happen while serving with our ministry, we would like to have an emergency contact on file.  If you wish to join our ministry without listing an emergency contact, please email us at <a href="mailto:info@comfortcaninesforchrist.org">info@comfortcaninesforchrist.org</a> so we may request more information.</p>
-					<div class="form-group" ng-show="volunteerInfo.emergencyContact.provided == true">
-						<label>Name</label>
-						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.name" placeholder="Emergency Contact Name" />
-						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.relationship" placeholder="Relationship" />
-					</div>
-					<div class="form-group" ng-show="volunteerInfo.emergencyContact.provided == true">
-						<label>Address</label>
-						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.address.street" placeholder="Street Address" />
-						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.address.city" placeholder="City" />
-						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.address.state" placeholder="State" />
-						<input type="text" class="form-control" ng-model="volunteerInfo.emergencyContact.address.zip" placeholder="Zip" />
-					</div>
-					<div class="form-group" ng-show="volunteerInfo.emergencyContact.provided == true">
-						<label>Phone Number</label>
-						<input type="tel" class="form-control" ng-model="volunteerInfo.emergencyContact.phoneNumber.primary" placeholder="Phone Number" />
-						<input type="tel" class="form-control" ng-model="volunteerInfo.emergencyContact.phoneNumber.secondary" placeholder="Other Phone Number" />
+					<!--ANY OTHER INFO -->
+					<p class="lead text-center">Any Other Info</p>
+					<div class="form-group">
+						<label>Please use this area to tell us any other information you would like to relay to us in regards to this ministry.</label>
+						<textarea rows="6" class="form-control" ng-model="volunteerInfo.anyOtherInfo"></textarea>
 					</div>
 				</div>
 			</div>
@@ -288,60 +341,13 @@
 				<h3 class="text-center">Your Involvement With Us</h3>
 				<!--COLUMN 1 -->
 				<div class="col-md-4 col-lg-4">
-					<!--ACTIVITIES INTEREST -->
-					<div class="form-group">
-						<label>What activities are you interested in volunteering to perform with CCC?</label>
-						<div class="checkbox" style="margin-left:20px;">
-							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.admin" />Administrative
-						</div>
-						<div class="checkbox" style="margin-left:20px;">
-							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.fundraising" />Fundraising
-						</div>
-						<div class="checkbox" style="margin-left:20px;">
-							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.training" />Training Dog(s)
-						</div>
-						<div class="checkbox" style="margin-left:20px;">
-							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.handling" />Handling Dog(s) at events or visitations
-						</div>
-						<div class="checkbox" style="margin-left:20px;">
-							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.care" />Dog Care and Grooming
-						</div>
-						<div class="checkbox" style="margin-left:20px;">
-							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.foster" />Foster or Temporarily House CCC Dog(s)
-						</div>
-						<div class="checkbox" style="margin-left:20px;">
-							<input type="checkbox" ng-model="volunteerInfo.activitiesInterest.other.other" />Other
-						</div>
-						<div class="form-group" ng-show="volunteerInfo.activitiesInterest.other.other == true">
-							<textarea rows="2" class="form-control" ng-model="volunteerInfo.activitiesInterest.other.explain"></textarea>
-						</div>
-					</div>
+
 				</div>
 				<!--COLUMN 2 -->
 				<div class="col-md-4 col-lg-4">
-					<!--EXPERIENCE -->
-					<div class="form-group">
-						<label>Do you have a dog you are planning on utilizing as a part of CCC?</label><br />
-						<div class="radio-inline">
-							<input type="radio" id="hasDogRadio" ng-value="true" ng-model="volunteerInfo.hasADog" />Yes
-						</div>
-						<div class="radio-inline">
-							<input type="radio" id="hasDogRadio" ng-value="false" ng-model="volunteerInfo.hasADog" />No
-						</div>
-						<p class="help-block" ng-show="volunteerInfo.hasADog == true">Please make sure you fill out the dog information form and send us your dog's medical certificate filled out by your veteranarian.  Both of these forms can be found on the "forms" page.</p>
-					</div>
-					<div class="form-group">
-						<label>Please describe to us what experience you have training, caring for, or handling dogs.</label>
-						<textarea rows="5" class="form-control" ng-model="volunteerInfo.experience"></textarea>
-					</div>
 				</div>
 				<!--COLUMN 3-->
 				<div class="col-md-4 col-lg-4">
-					<!--ANY OTHER INFO -->
-					<div class="form-group">
-						<label>Please use this area to tell us any other information you would like to relay to us in regards to this ministry.</label>
-						<textarea rows="6" class="form-control" ng-model="volunteerInfo.anyOtherInfo"></textarea>
-					</div>
 				</div>
 			</div>
 			<div class="row">
