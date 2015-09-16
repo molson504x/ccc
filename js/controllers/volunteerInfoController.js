@@ -27,7 +27,7 @@ comfortCaninesControllers.controller('volunteerInfoController', ['$scope', '$mod
 				zip: null
 			},
 			mailingAddress: {
-				isSame: true,
+				isSame: false,
 				street: "",
 				city: "",
 				state: "",
